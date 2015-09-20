@@ -44,11 +44,8 @@ mysqli_query($conn, $sql);*/
 //Insert Data
 $sql = "INSERT INTO Essays (email, hash)
 VALUES (".$email.",".$hash.")";
-if (mysqli_query($conn, $sql)) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-}
+$result = mysqli_query($conn, $sql) or die(mysql_error());
+
 
 
 //close connection
