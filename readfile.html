@@ -45,6 +45,8 @@
         }
         
         var id = getQueryVariable("id");
-        document.getElementById("text").innerHTML=id;
+        
+        var text = $.post(readfile.php, {hash: id});
+        document.getElementById("text").innerHTML=text;
     </script>
 </html>
