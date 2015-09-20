@@ -49,10 +49,7 @@
         var post = $.post("readfile.php", {hash: id});
         post.done(
             function(data) {
-                alert(data);
-                //var text=$(data).find("#text");
-                //confirm(text);
-                //$("#text").empty().append(text);
+                $("#text").empty().append(data);
             });
 
         //document.getElementById("text").innerHTML=text;
