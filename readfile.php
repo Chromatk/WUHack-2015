@@ -3,5 +3,5 @@
     $hash = $_POST["hash"];
     $text = file_get_contents($dir."/".$hash);
 
-    echo $text;
+    echo json_encode($text);
 ?>
