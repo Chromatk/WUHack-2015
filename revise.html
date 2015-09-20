@@ -2,7 +2,7 @@
 
 <html>
     <head>
-        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="revise.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     </head>
     
@@ -25,12 +25,23 @@
             </div>
         </div>
         
-        <div class="editor">
-            <form id="form" action="submitWriting.php" method="post">
-                <textarea id="writingText" placeholder="Write your text here" name="text"></textarea><br>
-                Email: <input type="text" name="email"><br>
-                <input type="submit" value="Request Feedback">
-            </form>
+        <div id="list">
+            
         </div>
+        
+        <script>
+            var x = $.post("getEssayTable.php");
+            var entries = x.split(".");
+            var text = "<ul>";
+            
+            //<li><a href="readFile.html/?id=HASH"> EMAIL, HASH </a></li>
+            for(i=0;i<entries.length/2;i++) {
+                text += '<li><a href="readFile.html?id='+entries[i*2+1]+'">' +entries[i*2]+','+entries[i*2+1] 0+'</a></li>';
+            }
+            text+="</ul>";
+            
+            document.getElementById("list").innerHTML=text;
+        </script>
+        
     </body>
 </html>
