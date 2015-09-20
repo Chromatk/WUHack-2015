@@ -2,52 +2,56 @@
 
 <html>
     <head>
-<!--
-        <link rel="stylesheet" href="numbers.css">
-
-        <script src="jquery-2.1.4.min.js"></script>
--->
+        <link rel="stylesheet" href="index.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     </head>
     
     <body>
-        <div class="title">
-            <h3> Travel Site</h3>
-            <p> A WUHack 2015 Project</p>
+        <div class="nav">
+            <div class="logo"> 
+                <a href="index.html"> Reviser</a>
+            </div>
+            <div class="container">
+                <ul>
+                    <li> <a href="write.html"> Write </a></li>
+                    <li> <a href="#"> Revise </a></li>
+                    <li> <a href="#"> Prompts </a></li>
+                </ul>
+                
+                <ul>
+                    <li> <a href="#"> Sign In </a></li>
+                    <li> <a href="#"> Profile </a></li>
+                </ul>
+            </div>
         </div>
         
-        <div class="stuff">
+        <div class="about"> 
+            <h3> Reviser </h3>
             
-            <form id="form" action="formSave.php" method="post">
-                <textarea id="text" placeholder="Write text here" name="text"></textarea><br>
-                First name: <input type="text" name="fname"><br>
-                Last name: <input type="text" name="lname"><br>
-                <input type="submit" value="Submit">
-            </form>
-            
-            <button onClick="buttonClick()"> Try it </button>
-            
-            <p id="demo"></p>
-            
-            
-            <script> 
-            function buttonClick() 
-                var x = document.getElementById("text");
-                var text = "";
-                var i;
-                for(i=0;i<x.length;i++ ) {
-                    text += x.elements[i].value + "<br>";
-                }
-                
-                $.post("formSave.php", text);
-                
-                //window.location.replace("google.com");
-                
-                document.getElementById("demo").innerHTML = text;
-            }
-            </script>
+            <p> Get anonymous feedback on writing </p>
         </div>
         
-        
+        <div class="steps">
+            <div class="step1">
+                <h3> Step 1: Write Something</h3>
+                <ul>
+                    <li> Simply write something you want feedback on</li>
+                    <li> Don't know what to write? Check out a prompt!</li>
+                </ul>
+            </div>
+            <div class="step2">
+                <h3> Step 2: Request Feedback </h3>
+                <ul>
+                    <li> Tag your writing so revisers can find your work</li>
+                    <li> Users will find your anonymous writing</li>
+                </ul>
+            </div>
+            <div class="step3">
+                <h3> Step 3: Pass it Forward! </h3>
+                <ul>
+                    <li> Start a prompt! Give anonymous feedback of others' writings!</li>
+                </ul>
+            </div>
+        </div>
     </body>
 </html>

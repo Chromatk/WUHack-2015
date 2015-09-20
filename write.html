@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    </head>
+    
+    <body>
+        <div class="nav">
+            <div class="logo"> 
+                <a href="index.html"> Reviser</a>
+            </div>
+            <div class="container">
+                <ul>
+                    <li> <a href="write.html"> Write </a></li>
+                    <li> <a href="#"> Revise </a></li>
+                    <li> <a href="#"> Prompts </a></li>
+                </ul>
+                
+                <ul>
+                    <li> <a href="#"> Sign In </a></li>
+                    <li> <a href="#"> Profile </a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="editor">
+            <form id="form" action="submitWriting.php" method="post">
+                <textarea id="writingText" placeholder="Write your text here" name="text"></textarea><br>
+                Email: <input type="text" name="email"><br>
+                <input type="submit" value="Request Feedback">
+            </form>
+        </div>
+    </body>
+</html>
