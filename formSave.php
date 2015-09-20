@@ -3,7 +3,7 @@ $dir = "log";
 
 if(!file_exists($dir)) {
     echo "hi";
-    mkdir ($dir, 0744);
+    mkdir ($dir, 0777);
 }
 
 if(file_exists($dir)) {
