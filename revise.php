@@ -43,12 +43,18 @@
                 }
 
                 $sql = "SELECT * FROM Essays";
-                $results = mysqli_query($conn, $sql);
-                while($row = mysql_fetch_array($results)) {?>
-                <li><a href="readFile.html?id="+<?php echo $row['hash']?>>
-                    <?php echo $row['email']." : ".$row['hash']?>
-                </li>
-                <?php } ?>
+                $table = mysqli_query($conn, $sql);
+                $text ="";
+                if(mysqli_num_rows($table)>0) {
+                    while($row = mysqli_fetch_array($table)) {
+                        $text .= "<li>".$row["email"]." : ".$row["hash"]."</li>";
+                    }
+                }
+
+                echo $text;
+
+                mysqli_close($conn);
+                ?>
             </ul>
         </div>
         
