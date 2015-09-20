@@ -27,7 +27,7 @@ if(!$conn) {
 }
 
 //Create Database
-$sql = "CREATE DATABASE IF NOT EXISTS essaysDB";
+/*$sql = "CREATE DATABASE IF NOT EXISTS essaysDB";
 if (mysqli_query($conn, $sql)) {
     echo "Database created successfully";
 } else {
@@ -39,12 +39,16 @@ $sql = "CREATE TABLE IF NOT EXISTS Essays (
 email VARCHAR(254),
 hash VARCHAR(32)
 )";
-mysqli_query($conn, $sql);
+mysqli_query($conn, $sql);*/
 
 //Insert Data
 $sql = "INSERT INTO Essays (email, hash)
 VALUES (".$email.",".$hash.")";
-mysqli_query($conn, $sql);
+if (mysqli_query($conn, $sql)) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
 
 
 //close connection
