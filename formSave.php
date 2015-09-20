@@ -2,6 +2,7 @@
 $dir = "log";
 
 if(!file_exists($dir)) {
+    echo "hi";
     mkdir ($dir, 0744);
 }
 
