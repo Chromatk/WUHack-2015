@@ -44,9 +44,15 @@
            return(false);
         }
         
+        var text;
+        
+        function setText(data) {
+            text=data;
+        }
+        
         var id = getQueryVariable("id");
         
-        var text = $.post("readfile.php", {hash: id});
+        $.post("readfile.php", {hash: id}, setText());
         document.getElementById("text").innerHTML=text;
     </script>
 </html>
