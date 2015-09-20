@@ -12,6 +12,7 @@
                 <a href="index.html"> Reviser</a>
             </div>
             <div class="container">
+                
                 <ul>
                     <li> <a href="write.html"> Write </a></li>
                     <li> <a href="revise.html"> Revise </a></li>
@@ -26,13 +27,36 @@
         </div>
         
         <div id="list">
-            
+            <ul>
+            <?php
+                $servername = "localhost";
+                $username = "root";
+                $password = file_get_contents("SQLPwKey.txt");
+                $password = substr($password, 0, strlen($password)-1);
+                $dbname = "essaysDB";
+
+                //create connection
+                $conn = mysqli_connect($servername, $username, $password, $dbname);
+                //Check connection
+                if(!$conn) {
+                    die("Connection failed: " . mysqli_connect_error($conn));
+                }
+
+                $sql = "SELECT * FROM Essays";
+                $results = mysqli_query($conn, $sql);
+                while($row = mysql_fetch_array($results)) {?>
+                <li><a href="readFile.html?id="+'"'<?php echo $row['hash']?>'"'
+                    <?php echo $row['Id']?>
+                    <?php echo $row['Name']?>
+                </li>
+                <?php } ?>
+            </ul>
         </div>
         
     </body>
-    
+    <!--
     <script>
-        var x = $_POST("getEssayTable.php");
+        var x = $.post("getEssayTable.php");
         console.log(x);
         var entries = x.split(".");
         var text = "<h1>hello world</h1><ul>";
@@ -50,4 +74,5 @@
         
         document.getElementById("list").innerHTML=text;
     </script>
+    -->
 </html>
