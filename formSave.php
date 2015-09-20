@@ -2,8 +2,8 @@
 $dir = "log";
 
 if(!file_exists($dir)) {
-    echo "hello world";
     mkdir ($dir, 0744);
+    echo file_exists($dir);
 }
 
 $filePath = $dir."/formLog.txt";
