@@ -1,16 +1,15 @@
-<?php
+<html>
+    <body>
+    
+        <p><?php
+        $file = "formLog.txt";
+        $txt = $_POST["text"];
 
-$file = "/var/www/html/WUHack-2015/formLog.txt";
-$txt = $_POST["text"];
-$content = file_get_contents($file) . $txt;
+        $content = $txt . "\n" . file_get_contents($file);
+        file_put_contents($file, $content);
 
-echo $txt."\n";
-
-if(!file_put_contents($file, $content)) {
-    echo "ERROR";
-} else {
-    echo "SUCCESS";
-}
-
-echo file_get_contents($file);
-?>
+        echo file_get_contents($file);
+        ?></p>
+        
+    </body>
+</html>
