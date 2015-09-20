@@ -52,7 +52,7 @@
         
         var id = getQueryVariable("id");
         
-        $.post("readfile.php", {hash: id}, setText());
+        $.post("readfile.php", {hash: id}, setText(), "json");
         document.getElementById("text").innerHTML=text;
     </script>
 </html>
