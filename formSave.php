@@ -1,13 +1,17 @@
 <?php
-$txt = $_POST["text"];
+$dir = "log";
 
-$file = "formLog.txt";
-$file = "form.txt";
+if(!file_exists($dir)) {
+    mkdir ($dir, 0744);
+}
+
+$filePath = $dir."/formLog.txt";
+$txt = $_POST["text"];
 
 echo $txt;
 echo "\n";
 
-file_put_contents($file, $txt);
+file_put_contents($filePath, $txt);
 
-echo file_get_contents($file);
+echo file_get_contents($filePath);
 ?>
