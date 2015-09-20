@@ -43,16 +43,16 @@
            }
            return(false);
         }
-        
-        var text;
-        
-        function setText(data) {
-            text=data;
-        }
-        
+
         var id = getQueryVariable("id");
         
-        $.post("readfile.php", {hash: id}, setText(), "json");
-        document.getElementById("text").innerHTML=text;
+        var post = $.post("readfile.php", {hash: id});
+        post.done(
+            function(data) {
+                var text=$(data).find("#text");
+                $("text").empty().append(text);
+            });
+
+        //document.getElementById("text").innerHTML=text;
     </script>
 </html>
