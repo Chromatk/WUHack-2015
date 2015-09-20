@@ -1,6 +1,6 @@
 <?php
 
-$file = "formLog.txt";
+$file = "/var/www/html/WUHack-2015/formLog.txt";
 $txt = $_POST["text"];
 $content = file_get_contents($file) . $txt;
 
