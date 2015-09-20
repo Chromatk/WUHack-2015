@@ -1,15 +1,49 @@
 <?php
-    $dir = "WritingsArchive";
-    if(!is_dir(dir)) {
-        mkdir($dir);
-    }
+$dir = "WritingsArchive";
+if(!is_dir(dir)) {
+    mkdir($dir);
+}
 
-    $writing = $_POST["text"];
-    $email = $_POST["email"];
-    
-    $hash = hash("md5", $writing);
+$writing = $_POST["text"];
+$email = $_POST["email"];
 
-    if(file_put_contents($dir."/".$hash, $writing)) {
-        echo "success";
-    }
+//generate unique hash for writing
+$hash = hash("md5", $writing);
+
+//write essay to file
+file_put_contents($dir."/".$hash, $writing);
+
+//save email and hash to SQL//
+$servername = "localhost";
+$username = "root";
+$password = file_get_contents("SQLPwKey.txt");
+$password = substr($password, 0, strlen($password)-1);
+
+//create connection
+$conn = mysql_connect($servername, $username, $password);
+//Check connection
+if(!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+//Create Database
+$sql = "CREATE DATABASE IF NOT EXISTS essaysDB";
+mysqli_query($conn, $sql);
+
+//Create table
+$sql = "CREATE TABLE IF NOT EXISTS Essays (
+email VARCHAR(254),
+hash VARCHAR(32)
+)";
+mysqli_query($conn, $sql);
+
+//Insert Data
+$sql = "INSERT INTO Essays (email, hash)
+VALUES (".$email.",".$hash.")";
+mysqli_query($conn, $sql);
+
+
+//close connection
+mysqli_close($conn);
+
 ?>
