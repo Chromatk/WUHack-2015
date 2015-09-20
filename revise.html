@@ -6,7 +6,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     </head>
     
-    <body onload="loadSite()">
+    <body>
         <div class="nav">
             <div class="logo"> 
                 <a href="index.html"> Reviser</a>
@@ -32,8 +32,7 @@
     </body>
     
     <script>
-       function loadSite() {
-        var x = $.post("getEssayTable.php");
+        /*var x = $.post("getEssayTable.php");
         var entries = x.split(".");
         var text = "<h1>hello world</h1><ul>";
 
@@ -46,8 +45,7 @@
             text+=entries[i*2]+','+entries[i*2+1];
             text+='</a></li>';
         }
-        text+="</ul>";
-        document.getElementById("list").innerHTML=text;
-       }
+        text+="</ul>";*/
+        document.getElementById("list").innerHTML="<h1>hello world</h1>";//text;
     </script>
 </html>
