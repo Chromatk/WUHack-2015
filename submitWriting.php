@@ -43,12 +43,12 @@ hash VARCHAR(32)
 mysqli_query($conn, $sql);*/
 
 //Insert Data
-$sql = "INSERT INTO Essays (email, hash)
-VALUES ("
+$sql = 'INSERT INTO Essays (email, hash)
+VALUES ("'
     .$email
-    .","
+    .'","'
     .$hash
-    .")";
+    .'")"';
 
 echo $sql;
 echo "<br>";
