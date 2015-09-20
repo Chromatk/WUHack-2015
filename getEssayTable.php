@@ -22,6 +22,8 @@ if(mysqli_num_rows($table)>0) {
     while($row = mysqli_fetch_assoc($result)) {
         $text .= "".$row["email"].".".$row["hash"].".";
     }
+} else {
+    echo "no data";
 }
 echo $text;
 
