@@ -13,10 +13,10 @@ if(!$conn) {
 }
 
 //select data
-$sql = 'SELECT * FROM Essays';
-$text = mysqli_query($conn, $sql);
+//$sql = 'SELECT * FROM Essays';
+//$text = mysqli_query($conn, $sql);
 
-echo $text;
+//echo $text;
 
 mysqli_close($conn);
 ?>
