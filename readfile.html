@@ -2,7 +2,7 @@
 
 <html>
     <head>
-        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="revise.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     </head>
     
@@ -12,9 +12,10 @@
                 <a href="index.html"> Reviser</a>
             </div>
             <div class="container">
+                
                 <ul>
                     <li> <a href="write.html"> Write </a></li>
-                    <li> <a href="revise.php"> Revise </a></li>
+                    <li> <a href="revise.html"> Revise </a></li>
                     <li> <a href="#"> Prompts </a></li>
                 </ul>
                 
@@ -25,12 +26,13 @@
             </div>
         </div>
         
-        <div class="editor">
-            <form id="form" action="submitWriting.php" method="post">
-                <textarea id="writingText" placeholder="Write your text here" name="text"></textarea><br>
-                Email: <input type="text" name="email"><br>
-                <input type="submit" value="Request Feedback">
-            </form>
+        <div class="reader">
+            <p id="text"> </p>
         </div>
+        
     </body>
+    
+    <script>
+        document.getElementById("text").innerHTML=id;
+    </script>
 </html>
