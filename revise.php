@@ -47,7 +47,7 @@
                 $text ="";
                 if(mysqli_num_rows($table)>0) {
                     while($row = mysqli_fetch_array($table)) {
-                        $text .= "<li>".$row["email"]." : ".$row["hash"]."</li>";
+                        $text .= "<li><a href=\"readfile.html?id=".$row["hash"]."\">".$row["email"]." : ".$row["hash"]."</li>";
                     }
                 }
 
