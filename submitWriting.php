@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
-$username = "";
-$password = "";
+$username = "root";
+$password = file_get_contents("SQLPwKey");
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password);
