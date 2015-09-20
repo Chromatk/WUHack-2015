@@ -28,7 +28,11 @@ if(!$conn) {
 
 //Create Database
 $sql = "CREATE DATABASE IF NOT EXISTS essaysDB";
-mysqli_query($conn, $sql);
+if (mysqli_query($conn, $sql)) {
+    echo "Database created successfully";
+} else {
+    echo "Error creating database: " . mysqli_error($conn);
+}
 
 //Create table
 $sql = "CREATE TABLE IF NOT EXISTS Essays (
