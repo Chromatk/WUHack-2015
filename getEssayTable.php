@@ -14,8 +14,15 @@ if(!$conn) {
 
 //select data
 $sql = "SELECT * FROM Essays";
-$text = mysqli_query($conn, $sql);
+$table = mysqli_query($conn, $sql);
 
+//parse table
+$text ="";
+if(mysqli_num_rows($table)>0) {
+    while($row = mysqli_fetch_assoc($result)) {
+        $text+= ""+$row["email"]+"."+$row["hash"]+".";
+    }
+}
 echo $text;
 
 mysqli_close($conn);
