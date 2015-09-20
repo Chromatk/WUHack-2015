@@ -45,9 +45,8 @@
                 $sql = "SELECT * FROM Essays";
                 $results = mysqli_query($conn, $sql);
                 while($row = mysql_fetch_array($results)) {?>
-                <li><a href="#">
-                    <?php echo $row['email']?>
-                    <!--<?php echo $row['hash']?>-->
+                <li><a href="readFile.html?id="+<?php echo $row['hash']?>>
+                    <?php echo $row['email']." : ".$row['hash']?>
                 </li>
                 <?php } ?>
             </ul>
