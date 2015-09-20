@@ -8,7 +8,7 @@ $writing = $_POST["text"];
 $email = $_POST["email"];
 
 //generate unique hash for writing
-$hash = hash("md5", $writing);
+$hash = hash("md5", $writing.$email.date("r"));
 
 //write essay to file
 file_put_contents($dir."/".$hash, $writing);
