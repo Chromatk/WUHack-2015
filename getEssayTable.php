@@ -14,7 +14,7 @@ if(!$conn) {
 
 //select data
 $sql = "SELECT * FROM Essays";
-//$text = mysqli_query($conn, $sql);
+$text = mysqli_query($conn, $sql);
 
 //echo $text;
 
