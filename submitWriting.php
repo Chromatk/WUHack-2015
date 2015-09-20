@@ -1,5 +1,5 @@
 <?php
-$dir = "~/WritingsArchive";
+$dir = "WritingsArchive";
 if(!is_dir(dir)) {
     mkdir($dir);
 }
