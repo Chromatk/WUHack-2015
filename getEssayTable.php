@@ -19,12 +19,11 @@ $table = mysqli_query($conn, $sql);
 //parse table
 $text ="";
 if(mysqli_num_rows($table)>0) {
-    while($row = mysqli_fetch_assoc($result)) {
+    while($row = mysqli_fetch_assoc($table)) {
         $text .= "".$row["email"].".".$row["hash"].".";
     }
-} else {
-    echo "no data";
 }
+
 echo $text;
 
 mysqli_close($conn);
