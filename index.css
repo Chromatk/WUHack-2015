@@ -1,0 +1,52 @@
+body {
+    margin: 0px;
+    background-color: #7EC0EE;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Shift', sans-serif;
+}
+
+.nav {
+    background-color: #085A94;
+    padding:10px;
+}
+
+.nav a {
+    color: #378DCA;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 14px 10px;
+    text-transform: uppercase;
+    font-family: 'Shift', sans-serif;
+}
+
+.nav a:visited {
+    color: #378DCA;
+}
+    
+
+.nav li {
+    display: inline;
+    border-width: thin;
+    border-color: #000000;
+    border-style: inset
+    
+}
+
+.nav ul {
+    display: inline;
+    padding-left:5px;
+}
+
+.nav .container {
+    align-content: center;
+}
+
+.nav .container .logo a {
+    font-size: 24px;
+    padding-left: 5px;
+}
+
+.editor textarea{
+    padding-left: 5px;
+}
