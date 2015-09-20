@@ -48,7 +48,7 @@ VALUES ("'
     .$email
     .'","'
     .$hash
-    .'")"';
+    .'")';
 
 echo $sql;
 echo "<br>";
