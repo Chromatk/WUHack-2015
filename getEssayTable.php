@@ -18,4 +18,5 @@ $text = mysqli_query($conn, $sql);
 
 echo $text;
 
+mysqli_close($conn);
 ?>
