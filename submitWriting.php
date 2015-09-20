@@ -43,9 +43,20 @@ mysqli_query($conn, $sql);*/
 
 //Insert Data
 $sql = "INSERT INTO Essays (email, hash)
-VALUES (".$email.",".$hash.")";
-$result = mysqli_query($conn, $sql) or die(mysql_error());
+VALUES ("
+    .$email
+    .","
+    .$hash
+    .")";
 
+echo $sql;
+echo "<br>";
+
+if (mysqli_query($conn, $sql)) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
 
 
 //close connection
