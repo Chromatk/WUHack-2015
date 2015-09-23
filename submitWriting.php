@@ -27,21 +27,6 @@ if(!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-//Create Database
-/*$sql = "CREATE DATABASE IF NOT EXISTS essaysDB";
-if (mysqli_query($conn, $sql)) {
-    echo "Database created successfully";
-} else {
-    echo "Error creating database: " . mysqli_error($conn);
-}
-
-//Create table
-$sql = "CREATE TABLE IF NOT EXISTS Essays (
-email VARCHAR(254),
-hash VARCHAR(32)
-)";
-mysqli_query($conn, $sql);*/
-
 //Insert Data
 $sql = 'INSERT INTO Essays (email, hash)
 VALUES ("'
@@ -53,14 +38,17 @@ VALUES ("'
 echo $sql;
 echo "<br>";
 
-if (mysqli_query($conn, $sql)) {
+$success = mysqli_query($conn, $sql);
+if ($success) {
     echo "New record created successfully";
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
-
-
 //close connection
 mysqli_close($conn);
 
+if($success) {
+    header("Location: index.html");
+    exit();
+}
 ?>
